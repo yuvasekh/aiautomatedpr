@@ -29,7 +29,7 @@ async function main() {
   console.log(`Target branch: ${targetBranch}`);
   const diff = execSync(`git diff ${targetBranch}..${currentBranch}`).toString();
   if (!diff.trim()) {
-    console.log('No differences found between branches.');
+    // console.log('No differences found between branches.');
     return;
   }
   const prMessage = await generatePRContent(diff, currentBranch, targetBranch);
