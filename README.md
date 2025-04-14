@@ -1,59 +1,49 @@
- Auto PR AI — Generate Smart Pull Requests from Git Diffs
+Auto PR AI — Generate Smart Pull Requests from Git Diffs
+Automatically generate pull request titles and descriptions based on your git diffs using AI — and open them on GitHub directly from your command line.
 
- Automatically generate pull request titles and descriptions based on your git diffs using AI, and open them on GitHub — all from the command line.
+Features
+Detects staged changes or diffs
 
- Detects staged changes or diffs
+Uses AI to generate PR title & body
 
- Uses AI to generate PR title & body
+Automatically creates a pull request
 
- Creates a pull request automatically
+Works with both public and private repos
 
- Works with both public and private repos
+Cross-platform support
 
- Cross-platform support
+🌍 Environment Variables
+🔐 Required (for all providers)
 
-Common (Required for All Platforms)
-GITHUB_TOKEN: Your GitHub Personal Access Token. Must have the repo scope to access private repositories.
+GITHUB_TOKEN=<your_github_token>
+PLATFORM=azure | vertex | google | openai
+PLATFORM can be one of: azure, vertex, google, openai
 
-PLATFORM: The LLM platform you want to use. Supported values are openai, azure, vertex, and google.
+🧠 LLM Provider Configuration
 
-MODEL: The name of the model you want to use (e.g., gpt-4, gemini-pro, etc.).
+Depending on the LLM provider, use the appropriate environment variables:
+1. Google Vertex AI
 
-OPENAI_API_KEY: The API key for OpenAI, Azure OpenAI, or Google Gemini (depending on your chosen platform).
+       PROJECT_ID=<your_project_id>
 
-🤖 Platform-Specific Configuration
-📦 If you're using Google Vertex AI (PLATFORM=vertex)
-You need to set the following:
+      LOCATION=<your_location>
 
-PROJECT_ID: Your Google Cloud project ID.
+     MODEL=<model_name>
 
-LOCATION: The region for Vertex AI (e.g., us-central1).
+     CLIENT_EMAIL=<your_service_account_email>
 
-MODEL: The name of the Vertex AI model (e.g., gemini-1.0-pro).
+     PRIVATE_KEY=<your_private_key>
 
-CLIENT_EMAIL: The service account email from your GCP credentials.
+2. Azure OpenAI
+ 
+  MODEL=<model_name>
+  OPENAI_API_KEY=<your_api_key>
+  RESOURCE_NAME=<your_azure_resource_name>
 
-PRIVATE_KEY: The private key associated with the service account (ensure proper formatting/escaping).
+3. Google (non-vertex)
+  MODEL=<model_name>
+  OPENAI_API_KEY=<your_api_key>
 
-🔷 If you're using Azure OpenAI (PLATFORM=azure)
-You need to set the following:
-
-OPENAI_API_KEY: Your Azure OpenAI API key.
-
-RESOURCE_NAME: Your Azure OpenAI resource name.
-
-MODEL: The deployment name of the model in Azure.
-
-🧠 If you're using OpenAI directly (PLATFORM=openai)
-You need to set the following:
-
-OPENAI_API_KEY: Your OpenAI API key.
-
-MODEL: The model name, such as gpt-3.5-turbo or gpt-4.
-
-🟢 If you're using Google Gemini (PLATFORM=google)
-You need to set the following:
-
-OPENAI_API_KEY: Your Google API key.
-
-MODEL: The Gemini model name, like gemini-pro.
+4. OpenAI
+  MODEL=<model_name>
+  OPENAI_API_KEY=<your_api_key>
