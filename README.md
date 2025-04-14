@@ -50,5 +50,7 @@ Depending on the LLM provider, use the appropriate environment variables:
 
 
 Run commands:
+
 1)Install the Module : npm i pr-gen-cli
+
 2)npx pr-gen-cli targetbranch
