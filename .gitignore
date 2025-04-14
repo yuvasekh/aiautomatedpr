@@ -1,0 +1,5 @@
+.env
+node_modules
+.genpr.config.json
+.genpr.config
+genpr.config.json
