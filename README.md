@@ -39,16 +39,20 @@ Depending on the LLM provider, use the appropriate environment variables:
 2. Azure OpenAI
  
   MODEL=<model_name>
+  
   OPENAI_API_KEY=<your_api_key>
+  
   RESOURCE_NAME=<your_azure_resource_name>
 
 3. Google (non-vertex)
-  MODEL=<model_name>
+
+   MODEL=<model_name>
+  
   OPENAI_API_KEY=<your_api_key>
 
 4. OpenAI
-  MODEL=<model_name>
-  OPENAI_API_KEY=<your_api_key>
+   MODEL=<model_name>
+   OPENAI_API_KEY=<your_api_key>
 
 
 Run commands:
