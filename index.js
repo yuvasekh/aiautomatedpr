@@ -3,10 +3,9 @@ import 'dotenv/config';
 import simpleGit from 'simple-git';
 import { generatePRContent } from './generatePRContent.js';
 import { execSync } from 'child_process';
-import fetch from 'node-fetch';
 import { createPRWithToken } from './createPRWithToken.js';
 const git = simpleGit();
-async function main() {
+async function main() { 
   const token = process.env.GITHUB_TOKEN;
   if (!token) {
     console.error('Error: GITHUB_TOKEN environment variable is not set');
