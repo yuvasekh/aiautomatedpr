@@ -28,8 +28,10 @@ async function main() {
   console.log(`Current branch: ${currentBranch}`);
   console.log(`Target branch: ${targetBranch}`);
   const diff = execSync(`git diff ${targetBranch}..${currentBranch}`).toString();
+
+  console.log(diff,"diff")
   if (!diff.trim()) {
-    console.log('No differences found between branches.');
+    // console.log('No differences found between branches.');
     return;
   }
   const prMessage = await generatePRContent(diff, currentBranch, targetBranch);
@@ -38,7 +40,7 @@ async function main() {
   }
   await git.push('origin', currentBranch);
   try {
-    console.log('Creating PR via GitHub API...');
+    // console.log('Creating PR via GitHub API...');
     const pr = await createPRWithToken(
       prMessage.title,
       prMessage.body,
