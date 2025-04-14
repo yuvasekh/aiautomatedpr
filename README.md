@@ -47,3 +47,8 @@ Depending on the LLM provider, use the appropriate environment variables:
 4. OpenAI
   MODEL=<model_name>
   OPENAI_API_KEY=<your_api_key>
+
+
+Run commands:
+1)Install the Module : npm i pr-gen-cli
+2)npx pr-gen-cli targetbranch
