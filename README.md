@@ -16,7 +16,9 @@ Cross-platform support
 🔐 Required (for all providers)
 
 GITHUB_TOKEN=<your_github_token>
+
 PLATFORM=azure | vertex | google | openai
+
 PLATFORM can be one of: azure, vertex, google, openai
 
 🧠 LLM Provider Configuration
